@@ -5,7 +5,7 @@ from deportista import Deportista
 
 class Futbolista(Persona, Deportista):
 
-    _listaFutbolistas = None
+    _listaFutbolistas = []
 
     def __init__(self, nombre, edad, altura, sexo, anosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
         Persona.__init__(self, nombre, edad, altura, sexo)
@@ -14,11 +14,7 @@ class Futbolista(Persona, Deportista):
         self._tarjetasRojas = tarjetasRojas
         self._piernaHabil = piernaHabil
 
-        if Futbolista._listaFutbolistas is None:
-            Futbolista._listaFutbolistas = []
-            Futbolista._listaFutbolistas(self)
-        else:
-            Futbolista._listaFutbolistas.append(self)
+        Futbolista._listaFutbolistas.append(self)
     
     def setGolesMarcados(self, golesMarcados):
         self._golesMarcados = golesMarcados
@@ -48,4 +44,5 @@ class Futbolista(Persona, Deportista):
 
     def __str__(self):
         return "Mi nombre es {} soy profesional en el deporte {} Tengo {} años de edad y llevo {} años en el deporte".format(
-            Persona.getNombre(self), Deportista.getDeporte(self), Deportista.getAnosPracticando(self) )
+            Persona.getNombre(self), Deportista.getDeporte(self), Persona.getEdad(self),
+            Deportista.getAnosPracticando(self) )
