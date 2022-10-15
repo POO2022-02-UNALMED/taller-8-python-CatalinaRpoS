@@ -7,9 +7,9 @@ class Futbolista(Persona, Deportista):
 
     _listaFutbolistas = []
 
-    def __init__(self, nombre, edad, altura, sexo, anosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
+    def __init__(self, nombre, edad, altura, sexo, añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
         Persona.__init__(self, nombre, edad, altura, sexo)
-        Deportista.__init__(self, "Futbol", anosPracticando)
+        Deportista.__init__(self, "Futbol", añosPracticando)
         self._golesMarcados = golesMarcados
         self._tarjetasRojas = tarjetasRojas
         self._piernaHabil = piernaHabil
@@ -45,4 +45,4 @@ class Futbolista(Persona, Deportista):
     def __str__(self):
         return "Mi nombre es {} soy profesional en el deporte {} Tengo {} años de edad y llevo {} años en el deporte".format(
             Persona.getNombre(self), Deportista.getDeporte(self), Persona.getEdad(self),
-            Deportista.getAnosPracticando(self) )
+            Deportista.getAñosPracticando(self) )
